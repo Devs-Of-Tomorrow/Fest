@@ -5,6 +5,6 @@ from django.db import models
 class Participants(models.Model):
     first_name = models.CharField(max_length=250)
     last_name = models.CharField(max_length=250)
-    phone = models.CharField(max_length=11, default=False)
-    email = models.EmailField(default=False)
-    password = models.CharField(max_length=254, default=False)
+    phone = models.CharField(max_length=11, default=None)
+    email = models.EmailField(default=None)
+    password = models.CharField(max_length=254, default=None)
