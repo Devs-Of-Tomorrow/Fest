@@ -1,0 +1,365 @@
+<html>
+    <head>
+        <title> Sign up</title>
+    </head>
+    <style>
+        nav{
+ margin-top: 5px;
+ padding: 10px;
+ border: solid 2px #000000;
+ border-radius:10px;
+ text-align: right;
+ margin-bottom:5px;
+ background-image: linear-gradient(to right,rgba(162, 114, 80, 0.9),rgba(111, 78, 55, 0.9));
+ overflow: hidden;
+}
+
+
+.blocks{
+ height:200px;
+ width:500px;
+ padding: 30px;
+ border:solid 2px #000000;
+ float: left;
+ margin-left:70px;
+}
+
+div{
+ margin-bottom:20px;
+ overflow:auto;
+}
+
+.floatleft{
+ float: left;
+ margin-left:20px;
+ margin-top:10px;
+ color: #000000;
+}
+
+.logo{
+ height:100px;
+ width:100px;
+ margin-left:20px;
+ border: 1px solid;
+ align-self: center;
+ border-radius: 50px;
+ float: left;
+}
+
+a{
+ padding: 5px;
+ width:50px;
+ margin-top:5px;
+ margin-right:15px;
+ text-decoration: none;
+ color:#000;
+ font-weight: bold;
+ line-height: 18px;
+ font-size: 18px;
+ transition: padding 0.5s ease-in-out;
+}
+
+a:hover{
+ padding: 10px;
+ text-decoration: underline;
+ border-radius:5px;
+}
+
+.centerdiv{
+ padding:20px;
+ margin-top:10px;
+ margin-left:150px;
+ height:350px;
+ margin-bottom:20px;
+ position:static;
+}
+
+
+body{
+ background: url(coffee.jpeg) no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+ 
+}
+
+.final{
+ height:200px;
+ width:200px;
+ padding: 30px;
+ border:solid 2px #000000;
+ border-radius:12px;
+ margin-left:70px;
+ background-image: url(sand.jpg);
+}
+
+.footer{
+ clear: left;
+ 
+}
+
+.h2{
+ margin-top:50px;
+}
+
+.truefooter{
+ margin-top:120px;
+ padding:20px;
+ border-top: solid 1px #000000;
+ background-color: rgba(162, 114, 80, 0.9);
+ border-radius: 10px;
+ color:#000;
+ 
+}
+
+button{
+ height:40px;
+ font-size: 14px;
+ background-color:#80CFD4;
+ border-radius: 10px;
+ transition: 0.5s ease-in-out;
+}
+
+button:hover{
+ cursor: pointer;
+ background-color: slategray;
+ opacity: 1;
+ border-radius: 10px;
+}
+
+section{
+ margin-top:30px;
+ margin-left: 50px;
+}
+
+.block1{
+ background-image: url(div1.jpg);
+}
+
+.block2{
+ background-image: url(div2.png);
+ background-size: 100% 100%;
+ border-radius: 200px;
+ height: 250px;
+}
+
+.block3{
+ background-image: url(div3.jpg);
+}
+
+.block4{
+ background-image: url(div4.jpg);
+}
+
+.textblock{
+ height:130px;
+ width:700px;
+ padding: 50px;
+ float: left;
+ margin-left:70px;
+ font-size: 18px;
+ text-align: justify;
+ line-height: 1.4;
+ color: #000000;
+ background-color: rgba(162, 114, 80, 1);
+ border: 2px solid #6f4e37;
+ border-radius: 50px;
+}
+
+.button{
+ height:50px;
+ width:50px;
+ border:solid 1px;
+ border-radius:6px;
+ background-color:#80CFD4;
+ transition: width 1s ease-in-out;
+}
+
+.socials{
+ border-style: none;
+ margin-left: 10px;
+ height: 30px;
+ width: 30px;
+}
+
+h3{
+ margin-top: 3px;
+ float: left;
+}   
+
+.follow{
+ padding-left: 60px;
+ border-top: 1px solid #000;
+ padding-top:10px;
+}        
+
+h1{
+ color: #000;
+} 
+
+.mission{
+ width: 40%;
+ border-right: 1px solid #000;
+ height:120px;
+ padding:5px;
+ padding-right: 30px;
+}
+
+.divform{
+ border-radius: 10px;
+ text-align: center;
+ background-image: url(stickynote1.jpg);
+ background-size: cover;
+ background-position:center;          
+ margin-left: 450px;
+ width:35%;
+ margin-top:110px;
+ border: solid #000000 3px;
+ padding:10px;
+
+}
+
+input,textarea,button{
+ padding:10px;
+ border-radius: 10px;
+ border-color: #000;
+ margin-bottom: 15px;
+ width: calc(100% - 18px);
+}
+
+.address{
+ margin-left: 50px;
+ padding-top: 10px;
+ padding-left:50px;
+ width:50%;
+ height: 120px;
+ text-align:left;
+}
+
+.copyright{
+ border-top: 1px solid #000;
+ padding-top: 10px;
+ margin-top: 0px;
+ padding-right: 15px;
+}
+
+.admin{
+ text-align: center;
+ margin: auto;
+ padding-left: 150px;
+ padding-bottom: 20px;
+}
+
+.navpadding{
+ padding-top: 25px;
+}
+
+.email{
+ font-size: 16px;
+}
+
+.errormessage{
+    color: black;
+    padding: 5px;
+}
+
+body{
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+            }
+
+</style>
+
+<script language="javascript">
+            function validate()
+            {
+            if(document.contactinfo.firstname.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your First name.";
+                document.contactinfo.firstname.focus();
+                return false;
+            }
+
+            if(document.contactinfo.lastname.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Last name.";
+                document.contactinfo.lastname.focus();
+                return false;
+            }
+
+            if(document.contactinfo.phone.value==""||isNaN(document.contactinfo.phone.value))
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Phone Number.";
+                document.contactinfo.phone.focus();
+                return false;
+            }
+
+            if(document.contactinfo.email.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Email.";
+                document.contactinfo.email.focus();
+                return false;
+            }
+
+            if(document.contactinfo.password.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter a Password.";
+                document.contactinfo.password.focus();
+                return false;
+            }
+
+            if(document.contactinfo.password2.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Confirm Your Password.";
+                document.contactinfo.password2.focus();
+                return false;
+            }
+            if(document.contactinfo.password.value!==document.contactinfo.password2.value)
+            {
+                document.getElementById("message").innerHTML="Passwords do not match";
+                return false;
+            }
+
+
+            document.window.location.href="index.html";
+
+            }
+
+</script>
+    <body>
+        <nav class="nav justify-content-center">
+            <a class="nav-link active" href="home.html">Home</a>
+            <a class="nav-link active" href="#">Purcharse</a>
+            <a class="nav-link" href="#">games</a>
+            <a class="nav-link disabled" href="#">log in</a>
+            <a class="nav-link disabled" href="signup.html">sign in</a>
+     
+        </nav>
+
+
+        <div class="divform">
+            <br>
+            <br>
+            <h1>
+                Create an Account
+            </h1><br>
+            <p id="message" class="errormessage">
+               <h1>{{error_message}}</h1>
+            </p>
+    
+            <form name="contactinfo" action="/signin" method="post">
+                {% csrf_token %}
+                <input type="text" name="firstname" placeholder="FirstName" required><br>
+                <input type="text" name="lastname" placeholder="LastName" required><br>
+                <input type="number" name="phone" placeholder="Phone Number" required><br>
+                <input type="text" name="email" placeholder="Email" required><br>
+                <input type="password" name="password" placeholder="Password" required><br>
+                <input type="password" name="password2" placeholder="Confirm your Password" required><br>
+                <button type="button" value="Signup" name="submitform" class="submit" onclick="validate()">SignUp</button>       
+                <br>
+                <br>
+            </form>
+    
+        </div>
+    </body>
+</html>
