@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <title> Otp</title>
+</head>
+<style>
+
+    .h2{
+    margin-top:50px;
+    }
+
+    button{
+    height:40px;
+    font-size: 14px;
+    background-color:#80CFD4;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    }
+
+    button:hover{
+    cursor: pointer;
+    background-color: slategray;
+    opacity: 1;
+    border-radius: 10px;
+    transform: scale(1.08);
+    }
+
+    h3{
+    margin-top: 3px;
+    float: left;
+    }   
+        
+    h1{
+    color: #000;
+    } 
+
+    .divform{
+    border-radius: 10px;
+    text-align: center;
+    background-size: cover;
+    background-position:center;          
+    margin-left: 450px;
+    width:35%;
+    margin-top:110px;
+    border: solid #000000 3px;
+    padding:10px;
+
+    }
+
+    input,textarea,button,.divotp{
+    padding:10px;
+    border-radius: 10px;
+    border-color: #000;
+    margin-bottom: 15px;
+    width: calc(100% - 18px);
+    }
+
+
+    body{
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+                }
+
+    label{
+        float: left;
+    }
+
+
+</style>
+<div class="divform">
+    
+    <div class="col-6 mx-auto">
+        <h3 class="text-center">Enter OTP sent to your number {{mobile}}</h3>
+        {% if message %}
+        <div class="alert alert-{{class}}">
+            {{message}}
+        </div>
+        {% endif %}
+
+        <form class="mt-2" method="post">
+            {% csrf_token %}
+            <div class="divotp" id="myDIV" style="display:block;">
+                <input id=""   type="password" name="form_otp" placeholder="1234" required><br>
+                <button class="btn" id="signin" type="submit"  name="signin">Verify OTP and Create Account</button>
+                <br>
+
+                <p>have account? <a href="{% url 'login' %}">Log in </a> &#160;&#160;&#160;&#160;&#160;&#160;
+                   Re-send OTP? <a href="{% url 'signin' %}">Re-send OTP</a>
+                </p>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}

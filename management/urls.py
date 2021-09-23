@@ -16,8 +16,19 @@ Including another URLconf
 # from django.contrib import admin
 from django.urls import path
 from management.views.visitorhome import Vsitorhome
-
+from management.views.visitorhome import Home
+from management.views.signin import SignIn, genotp
+from management.views.login import LogIn, logout
+from management.views.participantdata import profile
 
 urlpatterns = [
     path('', Vsitorhome.as_view(), name='visitorhome'),
+    path('home', Home.as_view(), name='home'),
+    path('signin', SignIn.as_view(), name='signin'),
+    path('login', LogIn.as_view(), name='login'),
+    path('logout', logout, name='logout'),
+    # path('register' , register , name="register"),
+    path('genotp' , genotp , name="genotp"),
+    path('profile', profile, name='profile')
+
 ]

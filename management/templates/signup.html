@@ -1,0 +1,265 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <title> Sign up</title>
+</head>
+<style>
+
+    .h2{
+    margin-top:50px;
+    }
+
+    button{
+    height:40px;
+    font-size: 14px;
+    background-color:#80CFD4;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    }
+
+    button:hover{
+    cursor: pointer;
+    background-color: slategray;
+    opacity: 1;
+    border-radius: 10px;
+    transform: scale(1.08);
+    }
+
+    h3{
+    margin-top: 3px;
+    float: left;
+    }   
+        
+    h1{
+    color: #000;
+    } 
+
+    .divform{
+    border-radius: 10px;
+    text-align: center;
+    background-size: cover;
+    background-position:center;          
+    margin-left: 450px;
+    width:35%;
+    margin-top:110px;
+    border: solid #000000 3px;
+    padding:10px;
+
+    }
+
+    input,textarea,button,.divotp{
+    padding:10px;
+    border-radius: 10px;
+    border-color: #000;
+    margin-bottom: 15px;
+    width: calc(100% - 18px);
+    }
+
+
+    body{
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+                }
+
+    label{
+        float: left;
+    }
+
+
+</style>
+
+<!-- <script language="javascript">
+            function validate()
+            {
+            if(document.contactinfo.firstname.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your First name.";
+                document.contactinfo.firstname.focus();
+                return false;
+            }
+
+            if(document.contactinfo.lastname.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Last name.";
+                document.contactinfo.lastname.focus();
+                return false;
+            }
+
+            if(document.contactinfo.phone.value==""||isNaN(document.contactinfo.phone.value))
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Phone Number.";
+                document.contactinfo.phone.focus();
+                return false;
+            }
+
+            if(document.contactinfo.email.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Email.";
+                document.contactinfo.email.focus();
+                return false;
+            }
+
+            if(document.contactinfo.password.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter a Password.";
+                document.contactinfo.password.focus();
+                return false;
+            }
+
+            if(document.contactinfo.password2.value=="")
+            {
+                document.getElementById("message").innerHTML="Please Confirm Your Password.";
+                document.contactinfo.password2.focus();
+                return false;
+            }
+            if(document.contactinfo.password.value!==document.contactinfo.password2.value)
+            {
+                document.getElementById("message").innerHTML="Passwords do not match";
+                return false;
+            }
+
+
+            document.window.location.href="index.html";
+
+            }
+
+
+</script> -->
+
+<script>
+    function myFunction() {
+        
+        // var x = document.getElementById("myDIV");
+        // var y = document.getElementById('form_data');
+
+        if(document.getElementById('firstname').value=="")
+        {
+            document.getElementById("message").innerHTML="Please Enter Your First Name.";
+            document.getElementById('firstname').focus();
+            return false;
+        }
+        
+        if(document.getElementById('lastname').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Last name.";
+                document.getElementById('lastname').focus();
+                return false;
+            }
+            if(document.getElementById('gender').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your gender.";
+                document.getElementById('gender').focus();
+                return false;
+            }
+
+        if(document.getElementById('phone').value==""||isNaN(document.getElementById('phone').value))
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Phone Number.";
+                document.getElementById('phone').focus();
+                return false;
+            }
+
+        if(document.getElementById('password').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter a Password.";
+                document.getElementById('password').focus();
+                return false;
+            }    
+
+        if(document.getElementById('password2').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Confirm Your Password.";
+                document.getElementById('password2').focus();
+                return false;
+            }  
+         
+        if(document.getElementById('password').value!==document.getElementById('password2').value)
+            {
+                document.getElementById("message").innerHTML="Passwords do not match";
+                return false;
+            } 
+        
+        // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+          
+        // if (document.getElementById('email').value.match(mailformat))
+        //     {
+        //         return (true);
+        //     }     
+        // else
+        //     {
+        //      document.getElementById("message").innerHTML="Please Enter Your Email.";
+        //      document.getElementById('email').focus();
+        //      return false;   
+        //     }
+
+
+        // y.style.display = "none";
+        // x.style.display = "block";
+        document.getElementById("message").innerHTML="";
+       
+
+        
+    
+    }
+
+   
+</script>
+
+
+<body>
+
+
+<div class="divform">
+    <br>
+    <br>
+    <h1>
+        Create an Account
+    </h1><br>
+    <p id="message" class="errormessage">
+    <h1>{{error_message}}</h1>
+    <h1 id="message" > </h1>
+
+
+    </p>
+
+    <form action="/signin" method="post" name="contactinfo">
+        {% csrf_token %}
+        <div class="form_data" id="form_data" style="display:block;" >
+
+            <label >First Name</label>
+            <input id="firstname" type="text" name="firstname" placeholder="FirstName" required><br>
+            <label > Last Name </label>
+            <input id="lastname" type="text" name="lastname" placeholder="LastName" required><br>
+            <label > Gender </label>
+            <input id="gender" type="text" name="gender" placeholder="Male/Female/Other" required><br> 
+            <label > Mobile Number </label>
+            <input id="phone" type="number" name="phone" placeholder="Phone Number" required><br>
+            <label > Email id </label>
+            <input id="email" type="email" name="email" placeholder="Email" required><br>
+            <label > Password </label>
+            <input id="password" type="password" name="password" placeholder="Password" required><br>
+            <label > Confirm Password </label>
+            <input id="password2" type="password" name="password2" placeholder="Re-type Password" required><br>
+            <button class="btn" id="genotp" type="submit" value="2" onclick="myFunction()" name="genotp">Gen OTP</button>
+            <p>Have Account? <a href="{% url 'login' %}">Log In</a></p>
+
+        </div>
+        <!-- <div class="divotp" id="myDIV" style="display:none;">
+            <label >OTP</label>
+            <input id=""   type="password" name="password3" placeholder="1234" required><br>
+            <button class="btn" id="signin" type="submit"  name="signin">Verify OTP and Create Account</button>
+            <br>
+            <a href="#">re gen Otp</a>
+            <br>
+        </div> -->
+    </form>
+
+</div>
+
+
+
+</body>
+
+{% endblock %}
+   
