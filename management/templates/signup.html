@@ -1,276 +1,75 @@
-<html>
-    <head>
-        <title> Sign up</title>
-    </head>
-    <style>
-        nav{
- margin-top: 5px;
- padding: 10px;
- border: solid 2px #000000;
- border-radius:10px;
- text-align: right;
- margin-bottom:5px;
- background-image: linear-gradient(to right,rgba(162, 114, 80, 0.9),rgba(111, 78, 55, 0.9));
- overflow: hidden;
-}
+{% extends 'base.html' %}
+
+{% block content %}
+
+<head>
+    <title> Sign up</title>
+</head>
+<style>
+
+    .h2{
+    margin-top:50px;
+    }
+
+    button{
+    height:40px;
+    font-size: 14px;
+    background-color:#80CFD4;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    }
+
+    button:hover{
+    cursor: pointer;
+    background-color: slategray;
+    opacity: 1;
+    border-radius: 10px;
+    transform: scale(1.08);
+    }
+
+    h3{
+    margin-top: 3px;
+    float: left;
+    }   
+        
+    h1{
+    color: #000;
+    } 
+
+    .divform{
+    border-radius: 10px;
+    text-align: center;
+    background-size: cover;
+    background-position:center;          
+    margin-left: 450px;
+    width:35%;
+    margin-top:110px;
+    border: solid #000000 3px;
+    padding:10px;
+
+    }
+
+    input,textarea,button,.divotp{
+    padding:10px;
+    border-radius: 10px;
+    border-color: #000;
+    margin-bottom: 15px;
+    width: calc(100% - 18px);
+    }
 
 
-.blocks{
- height:200px;
- width:500px;
- padding: 30px;
- border:solid 2px #000000;
- float: left;
- margin-left:70px;
-}
+    body{
+        background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+                }
 
-div{
- margin-bottom:20px;
- overflow:auto;
-}
+    label{
+        float: left;
+    }
 
-.floatleft{
- float: left;
- margin-left:20px;
- margin-top:10px;
- color: #000000;
-}
-
-.logo{
- height:100px;
- width:100px;
- margin-left:20px;
- border: 1px solid;
- align-self: center;
- border-radius: 50px;
- float: left;
-}
-
-a{
- padding: 5px;
- width:50px;
- margin-top:5px;
- margin-right:15px;
- text-decoration: none;
- color:#000;
- font-weight: bold;
- line-height: 18px;
- font-size: 18px;
- transition: padding 0.5s ease-in-out;
-}
-
-a:hover{
- padding: 10px;
- text-decoration: underline;
- border-radius:5px;
-}
-
-.centerdiv{
- padding:20px;
- margin-top:10px;
- margin-left:150px;
- height:350px;
- margin-bottom:20px;
- position:static;
-}
-
-
-body{
- background: url(coffee.jpeg) no-repeat center center fixed; 
- -webkit-background-size: cover;
- -moz-background-size: cover;
- -o-background-size: cover;
- background-size: cover;
- 
-}
-
-.final{
- height:200px;
- width:200px;
- padding: 30px;
- border:solid 2px #000000;
- border-radius:12px;
- margin-left:70px;
- background-image: url(sand.jpg);
-}
-
-.footer{
- clear: left;
- 
-}
-
-.h2{
- margin-top:50px;
-}
-
-.truefooter{
- margin-top:120px;
- padding:20px;
- border-top: solid 1px #000000;
- background-color: rgba(162, 114, 80, 0.9);
- border-radius: 10px;
- color:#000;
- 
-}
-
-button{
- height:40px;
- font-size: 14px;
- background-color:#80CFD4;
- border-radius: 10px;
- transition: 0.5s ease-in-out;
-}
-
-button:hover{
- cursor: pointer;
- background-color: slategray;
- opacity: 1;
- border-radius: 10px;
-}
-
-section{
- margin-top:30px;
- margin-left: 50px;
-}
-
-.block1{
- background-image: url(div1.jpg);
-}
-
-.block2{
- background-image: url(div2.png);
- background-size: 100% 100%;
- border-radius: 200px;
- height: 250px;
-}
-
-.block3{
- background-image: url(div3.jpg);
-}
-
-.block4{
- background-image: url(div4.jpg);
-}
-
-.textblock{
- height:130px;
- width:700px;
- padding: 50px;
- float: left;
- margin-left:70px;
- font-size: 18px;
- text-align: justify;
- line-height: 1.4;
- color: #000000;
- background-color: rgba(162, 114, 80, 1);
- border: 2px solid #6f4e37;
- border-radius: 50px;
-}
-
-.button{
- height:50px;
- width:50px;
- border:solid 1px;
- border-radius:6px;
- background-color:#80CFD4;
- transition: width 1s ease-in-out;
-}
-
-.socials{
- border-style: none;
- margin-left: 10px;
- height: 30px;
- width: 30px;
-}
-
-h3{
- margin-top: 3px;
- float: left;
-}   
-
-.follow{
- padding-left: 60px;
- border-top: 1px solid #000;
- padding-top:10px;
-}        
-
-h1{
- color: #000;
-} 
-
-.mission{
- width: 40%;
- border-right: 1px solid #000;
- height:120px;
- padding:5px;
- padding-right: 30px;
-}
-
-.divform{
- border-radius: 10px;
- text-align: center;
- background-image: url(stickynote1.jpg);
- background-size: cover;
- background-position:center;          
- margin-left: 450px;
- width:35%;
- margin-top:110px;
- border: solid #000000 3px;
- padding:10px;
-
-}
-
-input,textarea,button{
- padding:10px;
- border-radius: 10px;
- border-color: #000;
- margin-bottom: 15px;
- width: calc(100% - 18px);
-}
-
-.address{
- margin-left: 50px;
- padding-top: 10px;
- padding-left:50px;
- width:50%;
- height: 120px;
- text-align:left;
-}
-
-.copyright{
- border-top: 1px solid #000;
- padding-top: 10px;
- margin-top: 0px;
- padding-right: 15px;
-}
-
-.admin{
- text-align: center;
- margin: auto;
- padding-left: 150px;
- padding-bottom: 20px;
-}
-
-.navpadding{
- padding-top: 25px;
-}
-
-.email{
- font-size: 16px;
-}
-
-.errormessage{
-    color: black;
-    padding: 5px;
-}
-
-body{
-    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
-            }
 
 </style>
 
-<script language="javascript">
+<!-- <script language="javascript">
             function validate()
             {
             if(document.contactinfo.firstname.value=="")
@@ -325,41 +124,142 @@ body{
 
             }
 
+
+</script> -->
+
+<script>
+    function myFunction() {
+        
+        // var x = document.getElementById("myDIV");
+        // var y = document.getElementById('form_data');
+
+        if(document.getElementById('firstname').value=="")
+        {
+            document.getElementById("message").innerHTML="Please Enter Your First Name.";
+            document.getElementById('firstname').focus();
+            return false;
+        }
+        
+        if(document.getElementById('lastname').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Last name.";
+                document.getElementById('lastname').focus();
+                return false;
+            }
+            if(document.getElementById('gender').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter Your gender.";
+                document.getElementById('gender').focus();
+                return false;
+            }
+
+        if(document.getElementById('phone').value==""||isNaN(document.getElementById('phone').value))
+            {
+                document.getElementById("message").innerHTML="Please Enter Your Phone Number.";
+                document.getElementById('phone').focus();
+                return false;
+            }
+
+        if(document.getElementById('password').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Enter a Password.";
+                document.getElementById('password').focus();
+                return false;
+            }    
+
+        if(document.getElementById('password2').value=="")
+            {
+                document.getElementById("message").innerHTML="Please Confirm Your Password.";
+                document.getElementById('password2').focus();
+                return false;
+            }  
+         
+        if(document.getElementById('password').value!==document.getElementById('password2').value)
+            {
+                document.getElementById("message").innerHTML="Passwords do not match";
+                return false;
+            } 
+        
+        // var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
+          
+        // if (document.getElementById('email').value.match(mailformat))
+        //     {
+        //         return (true);
+        //     }     
+        // else
+        //     {
+        //      document.getElementById("message").innerHTML="Please Enter Your Email.";
+        //      document.getElementById('email').focus();
+        //      return false;   
+        //     }
+
+
+        // y.style.display = "none";
+        // x.style.display = "block";
+        document.getElementById("message").innerHTML="";
+       
+
+        
+    
+    }
+
+   
 </script>
-    <body>
-        <nav class="nav justify-content-center">
-            <a class="nav-link active" href="home.html">Home</a>
-            <a class="nav-link active" href="#">Purcharse</a>
-            <a class="nav-link" href="#">games</a>
-            <a class="nav-link disabled" href="#">log in</a>
-            <a class="nav-link disabled" href="signup.html">sign in</a>
-     
-        </nav>
 
 
-        <div class="divform">
-            <br>
-            <br>
-            <h1>
-                Create an Account
-            </h1><br>
-            <p id="message" class="errormessage">
-               <h1>{{error_message}}</h1>
-            </p>
-    
-            <form name="contactinfo" action="/signin" method="post">
-                {% csrf_token %}
-                <input type="text" name="firstname" placeholder="FirstName" required><br>
-                <input type="text" name="lastname" placeholder="LastName" required><br>
-                <input type="number" name="phone" placeholder="Phone Number" required><br>
-                <input type="text" name="email" placeholder="Email" required><br>
-                <input type="password" name="password" placeholder="Password" required><br>
-                <input type="password" name="password2" placeholder="Confirm your Password" required><br>
-                <button type="button" value="Signup" name="submitform" class="submit" onclick="validate()">SignUp</button>       
-                <br>
-                <br>
-            </form>
-    
+<body>
+
+
+<div class="divform">
+    <br>
+    <br>
+    <h1>
+        Create an Account
+    </h1><br>
+    <p id="message" class="errormessage">
+    <h1>{{error_message}}</h1>
+    <h1 id="message" > </h1>
+
+
+    </p>
+
+    <form action="/signin" method="post" name="contactinfo">
+        {% csrf_token %}
+        <div class="form_data" id="form_data" style="display:block;" >
+
+            <label >First Name</label>
+            <input id="firstname" type="text" name="firstname" placeholder="FirstName" required><br>
+            <label > Last Name </label>
+            <input id="lastname" type="text" name="lastname" placeholder="LastName" required><br>
+            <label > Gender </label>
+            <input id="gender" type="text" name="gender" placeholder="Male/Female/Other" required><br> 
+            <label > Mobile Number </label>
+            <input id="phone" type="number" name="phone" placeholder="Phone Number" required><br>
+            <label > Email id </label>
+            <input id="email" type="email" name="email" placeholder="Email" required><br>
+            <label > Password </label>
+            <input id="password" type="password" name="password" placeholder="Password" required><br>
+            <label > Confirm Password </label>
+            <input id="password2" type="password" name="password2" placeholder="Re-type Password" required><br>
+            <button class="btn" id="genotp" type="submit" value="2" onclick="myFunction()" name="genotp">Gen OTP</button>
+            <p>Have Account? <a href="{% url 'login' %}">Log In</a></p>
+
         </div>
-    </body>
-</html>
+        <!-- <div class="divotp" id="myDIV" style="display:none;">
+            <label >OTP</label>
+            <input id=""   type="password" name="password3" placeholder="1234" required><br>
+            <button class="btn" id="signin" type="submit"  name="signin">Verify OTP and Create Account</button>
+            <br>
+            <a href="#">re gen Otp</a>
+            <br>
+        </div> -->
+    </form>
+
+</div>
+
+
+
+</body>
+
+{% endblock %}
+   

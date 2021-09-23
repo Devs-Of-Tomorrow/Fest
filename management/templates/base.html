@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fest_Home</title>
+</head>
+<body>
+<style>
+      nav {
+        background-color: grey;
+        border-style: groove;
+        margin-bottom: 50px;
+
+      }
+        
+ 
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      /* Change the link color to #111 (black) on hover */
+      li a:hover {
+        background-color: #111;
+      }
+
+      .logo-image{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-top: -5px;
+          float:right;
+      }
+      .profile-logo{
+        height: 30px;
+        width: 40px;
+        margin-left: 850px;
+      }
+
+      .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+      }
+
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+      }
+
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      }
+
+</style>
+<div>
+    <nav class="nav">
+
+        <!-- <a  href="#">Disabled link</a>
+        <a  href="#">Events</a>
+        <a  href="#">Schedule</a>
+        <a  href="#">Shop</a>
+        <a  href="#">Blogs</a>
+        <a  href="#">Gallery</a>
+        <a  href="#">Pricing</a>
+        <a  href="#">Partners</a>
+        <a  href="#">About</a>
+        <a  href="#">Contact</a> -->
+
+        {% if request.session.user_id %}
+
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a  onclick="myFunc()">My Events</a></li>
+          <li><a href="/logout">Log out</a></li>
+          <li><a href="/admin">Admin</a></li>
+          <li>
+      
+            <a class="profile-logo" onclick="profilePage()"><img class="logo-image" src="{{user.profile_image.url}}" >
+            </a>
+           
+          </li>
+          
+         
+        </ul>
+        
+ 
+        {% else %}
+
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/signin">Sign In</a></li>
+            <li><a href="/login">Log In</a></li>
+            <li><a href="/admin">Admin</a></li>
+          </ul>
+    
+        {% endif %}
+
+    </nav>
+
+</div>
+
+<script>
+
+</script>
+
+{% block content %}
+
+{% endblock %}
+
+<div>
+
+</div>
+</body>
+</html>
