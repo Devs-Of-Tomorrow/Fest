@@ -25,7 +25,7 @@ class SignIn(View):
             # import smtplib
             # ser = smtplib.SMTP("smtp.gmail.com", 587)
             # ser.starttls()
-            # ser.login("amir.visualizeindia@gmail.com","amir.vid")
+            # ser.login("amir.visualizeindia@gmail.com","pass")
             # msg = otp
             # ser.sendmail("amir.visualizeindia@gmail.com", "amir.visualizeindia@gmail.com", msg)
             # print("mail sent sucessfully")
