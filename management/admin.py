@@ -1,5 +1,5 @@
 from django.contrib import admin
-from management.models.participants import SignInUser, Participant, Parti
+from management.models.participants import SignInUser, Participant, Parti, CustomUser
 
 from .models.festdetails import Festevent, FestAccomodation, Sponsors
 
@@ -35,6 +35,7 @@ admin.site.register(Participant, AdminParticipant)
 admin.site.register(SignInUser, AdminSignInUser)
 admin.site.register(Festevent, AdminFestevent)
 admin.site.register(Parti)
+admin.site.register(CustomUser)
 admin.site.register(FestAccomodation)
 admin.site.register(Sponsors, AdminSponsors)
 

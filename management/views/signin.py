@@ -18,6 +18,11 @@ class SignIn(View):
         password = request.POST.get('password')
         genotpp = request.POST.get('genotp')
         gender = request.POST.get('gender')
+        img = 'uploads/events/profile_images/dummy_boy.png'
+        # if gender == 'Female':
+        #     img = 'uploads/events/profile_images/dummy female.png'
+
+        
         
         if genotpp:
             otp = str(random.randint(1000,9999))
@@ -32,7 +37,7 @@ class SignIn(View):
             # ser.quit()
 
         
-        print('genotpsdsds', genotpp, request.session.get('session_otp'))
+        print('genotpsdsds',genotpp, request.session.get('session_otp'))
 
         hashpassword = None
         
@@ -59,6 +64,7 @@ class SignIn(View):
             request.session['tryemail'] = email 
             request.session['tryphone'] = phone
             request.session['trypassword'] = password
+            request.session['trygender'] = gender
             return redirect("genotp")
 
         else:
@@ -90,13 +96,22 @@ def genotp(request):
         email = request.session.get('tryemail')
         phone = request.session.get('tryphone')
         password = request.session.get('trypassword')
+        gender = request.session.get('trygender')
+        img = 'uploads/events/profile_images/dummy_boy.png'
+        if gender == 'Female' or gender=='female':
+            img = 'uploads/events/profile_images/dummy female.png'
+        
+
+    
         form_otp = request.POST.get('form_otp')
         
         signinuser = SignInUser(first_name=first_name,
                                 last_name=last_name,
                                 email=email,
                                 phone=phone,
-                                password=password
+                                password=password,
+                                gender=gender,
+                                profile_image = img
                                 )
 
         if otp==form_otp:

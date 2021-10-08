@@ -6,10 +6,71 @@ from django.utils import timezone
 from django_extensions.db import fields as extension_fields
 from .festdetails import FestAccomodation
 from datetime import datetime
+from django.contrib.auth.models import PermissionsMixin
+from django.contrib.auth.models import (
+    AbstractBaseUser, BaseUserManager
+)
 # ohmydoggaming@gmail.com
 
 # Create your models here.
 
+
+class CustomUser(AbstractBaseUser):
+    
+
+    objects = BaseUserManager() 
+    email = models.EmailField( ('email address'),
+        
+        max_length=255,
+        unique=True
+    )
+    is_active = models.BooleanField(default=True)
+    staff = models.BooleanField(default=False)
+    admin = models.BooleanField(default=False)
+    GENDER_CHOICE = (
+        ('Female', 'Female'),
+        ('male', 'Male'),
+        ('Other', 'Other')
+    )
+    gender = models.CharField(
+        max_length=10, default=None,
+        blank=True, null=True,
+        choices=GENDER_CHOICE
+    )
+    mobile = models.CharField(
+        max_length=11, default=None
+    )
+    UNIVERSITY_CHOICES = (
+        ('mu', 'Mumbai University'),
+        ('gtu', 'Gujarat Technological University'),
+        ('marwadi', 'Marwadi University'),
+        ('atmiya', 'Atmiya University'),
+        ('rk', 'RK University'),
+        ('others', 'Others')
+    )
+    university = models.CharField(
+        max_length=50,
+        blank=True, null=True,
+        choices=UNIVERSITY_CHOICES
+    ) 
+    college = models.CharField(
+        max_length=10,
+        blank=True, null=True
+    )
+    profile_image = models.ImageField(
+        upload_to='uploads/events/profile_images/', blank=True,
+        default = 'uploads/events/profile_images/dummy_boy2.png' , null =True
+    )
+    Terms_and_Conditions = models.BooleanField(
+        null=True
+    )
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['gender', 'mobile'] # Email & Password are required by default.
+
+    def __str__(self):
+        return self.email
+        
 
 class SignInUser(models.Model):
     GENDER_CHOICE = (
@@ -42,7 +103,7 @@ class SignInUser(models.Model):
         ('rk', 'RK University'),
         ('others', 'Others')
     )
-    universitiy = models.CharField(
+    university = models.CharField(
         max_length=50,
         blank=True, null=True,
         choices=UNIVERSITY_CHOICES

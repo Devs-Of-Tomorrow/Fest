@@ -137,6 +137,8 @@
         {
             document.getElementById("message").innerHTML="Please Enter Your First Name.";
             document.getElementById('firstname').focus();
+            document.getElementById('genotp').disabled = true;
+
             return false;
         }
         
@@ -144,12 +146,17 @@
             {
                 document.getElementById("message").innerHTML="Please Enter Your Last name.";
                 document.getElementById('lastname').focus();
+                document.getElementById('genotp').disabled = true;
+
+
                 return false;
             }
             if(document.getElementById('gender').value=="")
             {
                 document.getElementById("message").innerHTML="Please Enter Your gender.";
                 document.getElementById('gender').focus();
+                document.getElementById('genotp').disabled = true;
+
                 return false;
             }
 
@@ -157,6 +164,8 @@
             {
                 document.getElementById("message").innerHTML="Please Enter Your Phone Number.";
                 document.getElementById('phone').focus();
+                document.getElementById('genotp').disabled = true;
+
                 return false;
             }
 
@@ -164,6 +173,8 @@
             {
                 document.getElementById("message").innerHTML="Please Enter a Password.";
                 document.getElementById('password').focus();
+                document.getElementById('genotp').disabled = true;
+
                 return false;
             }    
 
@@ -171,12 +182,16 @@
             {
                 document.getElementById("message").innerHTML="Please Confirm Your Password.";
                 document.getElementById('password2').focus();
+                document.getElementById('genotp').disabled = true;
+
                 return false;
             }  
          
         if(document.getElementById('password').value!==document.getElementById('password2').value)
             {
                 document.getElementById("message").innerHTML="Passwords do not match";
+                document.getElementById('genotp').disabled = true;
+
                 return false;
             } 
         
@@ -197,7 +212,7 @@
         // y.style.display = "none";
         // x.style.display = "block";
         document.getElementById("message").innerHTML="";
-       
+        document.getElementById('genotp').disabled = false;
 
         
     
@@ -207,7 +222,7 @@
 </script>
 
 
-<body>
+<body onmouseover="myFunction()">
 
 
 <div class="divform">

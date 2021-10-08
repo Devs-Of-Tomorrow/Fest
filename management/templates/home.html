@@ -329,28 +329,24 @@
               <tr>
                 <th width="30%"> University </th>
                 <td width="2%">:</td>
-                <td>{{user.universitiy}}</td>
+                <td>{{user.get_university_display}}</td>
               </tr>
               <tr>
-                <th width="30%"> College	</th>
+                <th width="30%"> College</th>
                 <td width="2%">:</td>
                 <td>{{user.college}}</td>
               </tr>
               <tr>
                 <th width="30%">Gender</th>
                 <td width="2%">:</td>
-                <td>{{user.gender}}</td>
+                <td>{{user.get_gender_display|lower}}</td>
               </tr>
               <tr>
-                <th width="30%">Religion</th>
+                <th width="30%">Mobile</th>
                 <td width="2%">:</td>
-                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
               </tr>
-              <tr>
-                <th width="30%">blood</th>
-                <td width="2%">:</td>
-                <td>{{user.email}}</td>
-              </tr>
+            
             </table>
           </div>
     </div>
